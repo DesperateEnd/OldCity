@@ -1,6 +1,10 @@
 <template>
     <div class="home">
-        home
+       <div class="allbox homebg" style="padding-top:0">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
     </div>
 </template>
 

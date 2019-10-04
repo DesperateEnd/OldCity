@@ -123,3 +123,69 @@ html,body{
     -webkit-line-clamp: 2;
     overflow: hidden;
   }
+  /* 公用头部样式 */
+  .allhead{
+      color:#fff;
+      background: linear-gradient(45deg,black,red);
+      height: 0.45rem;
+      line-height: 0.45rem;
+      font-size: 0.18rem;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+  }
+  .myfooter{
+      height: 0.5rem;
+  }
+  .allbody{
+      padding-top: 0.45rem;
+      height: 100%;
+      overflow: hidden;
+      padding-bottom: 0.5rem;
+  }
+  .allbox{
+      height: 100%;
+      overflow: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+  }
+  .hotbg{
+      background: rgba(0,0,0,0.3)
+  }
+  .hotbg::after{
+      content:'';
+      z-index: -1;
+      background: url(../../../static/images/hotbg.jpg) no-repeat;
+      background-size: 100% auto;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0 ;
+      top: 0;
+      opacity: 0.7;
+  }
+  .messagebg::after{
+    content:'';
+    z-index: -1;
+    background: url(../../../static/images/messagebg.jpg) no-repeat;
+    background-size: 100% auto;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0 ;
+    top: 0;
+    opacity: 0.8;
+  }
+  .homebg{
+    content:'';
+    z-index: -1;
+    background: url(../../../static/images/homebg1.jpg) no-repeat;
+    background-size: 100% auto;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0 ;
+    top: 0;
+    opacity: 0.8;
+  }

@@ -1,9 +1,9 @@
 <template>
   <div class="index">
     <!-- 轮播图 -->
-    <van-swipe :autoplay="3000" style="width:100%">
+    <van-swipe :autoplay="3000" style="width:100%;height:2rem">
       <van-swipe-item v-for="(image, index) in images" :key="index" >
-        <img v-lazy="image" style="width:auto;height: 2rem" />
+        <img v-lazy="image" style="width:100%;height:100%" />
       </van-swipe-item>
     </van-swipe>
     <!-- 通知栏 -->
