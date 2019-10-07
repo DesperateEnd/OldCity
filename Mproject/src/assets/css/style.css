@@ -1,191 +1,78 @@
 *{
     margin: 0;
-    padding: 0;
+    padding:0;
     box-sizing: border-box;
-}
-html,body{
-    width: 100%;
-    height:100%;
-    overflow: hidden;
-}
-#app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    font-size: 0.12rem;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
     
-  }
-  img{
-      vertical-align: middle;
-  }
-  li{
-      list-style: none;
-  }
-  .index{
-      width: 100%;
-      height: 100%;
-      overflow-y: auto;
-      padding-bottom: 0.5rem;
-  }
-  .index::after{
-      content:"";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background:url(../../../static/images/indexbg2.jpg) no-repeat;
-      background-size: 100% 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      opacity: 0.88;
-      z-index: -1;
-  }
-  .index-navigation{
-      color: #fff;
-      background: rgba(0,0,0,0.3)
-  }
-  .index-navigation-title{
-      font-size: 0.15rem;
-      text-align: left;
-      border-bottom: 1px solid #eee;
-      padding: 0.05rem 0;
-      padding-left: 0.05rem;
-      margin-bottom: 0.1rem;
-  }
-  .index-navigation-title i,.index-navigation-title span{
-      display: inline-block;
-      vertical-align:center;
-  }
-  .index-navigation-box{
-      font-size: 0.13rem;
-  }
-  .index-navigation-box li{
-      display: inline-block;
-      width: 32%;
-      padding: 0.1rem 0;
-  }
-  .index-navigation-box li i{
-      font-size: 0.3rem;
-      margin-bottom: 0.05rem;
-  }
-  .van-tabbar--fixed{
-      background: rgba(0,0,0,0.7)
-  }
-  .newdyamic{
-      margin-top:0.1rem;
-      color: #fff;
-      text-align:left;
-      padding:0.05rem;
-      background: rgba(0,0,0,0.3);
-  }
-  .newdyamic-tit{
-      font-size: 0.15rem;
-      border-bottom: 1px solid #eee;
-      padding: 0.05rem 0;
-  }
-  .newdyamic-tit i{
-      color: #e70707;   
-      font-size: 0.17rem
-  }
-  .newdyamic-list li{
-      width: 85%;
-      margin: auto;
-      background: rgba(0,0,0,0.5);
-      margin-top: 0.07rem;
-      border-radius: 5px;
-      padding: 6px
-  }
-  .newdyamic-list li>div{
-      display: inline-block;
-      vertical-align: middle;
-  }
-  .newdyamic-list li>div:first-child{
-      width: 20%;
-      font-size: 0.4rem;
-      text-align: center;
-  }
-  .newdyamic-list li>div:last-child{
-      width: 78%;
-  }
-  .newdyamic-list li>div:last-child>b{
-      font-size: 0.14rem;
-      overflow: hidden;
-        text-overflow:ellipsis;
-        white-space: nowrap;
-  }
-  .newdyamic-list li>div:last-child>div{
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    /*知乎字体*/
+    /*  font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; */
+    /*淘宝字体*/
+    /* font-family: tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif; */
+    /*简书字体*/
+    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+    touch-action: manipulation;
+    -ms-touch-action: manipulation;
+}
+body{
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-  }
-  /* 公用头部样式 */
-  .allhead{
-      color:#fff;
-      background: linear-gradient(45deg,black,red);
-      height: 0.45rem;
-      line-height: 0.45rem;
-      font-size: 0.18rem;
-      position: absolute;
-      width: 100%;
-      top: 0;
-      left: 0;
-  }
-  .myfooter{
-      height: 0.5rem;
-  }
-  .allbody{
-      padding-top: 0.45rem;
+    color: #353535;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    -khtml-user-select:none;
+      user-select:none;
+      background: #f3f3f3;
+
+}
+img{
+    vertical-align: middle;
+    
+}
+a{
+    text-decoration: none;
+    color: #999;
+}
+li{
+    list-style: none;
+}
+#app{
+   overflow: hidden;
+   font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position:fixed;
+    text-align: center;
+}
+input, textarea {
+    -webkit-user-select: text!important;
+    -khtml-user-select: text!important;
+    -moz-user-select: text!important;
+    -ms-user-select: text!important;
+    -o-user-select: text!important;
+    user-select: text!important;
+    }
+ 
+  /* 公用样式 */
+  .allbody{/*所有外部box*/
+      padding-top: 0.45rem;/*head 高度*/
       height: 100%;
       overflow: hidden;
-      padding-bottom: 0.5rem;
+      padding-bottom: 0.5rem;/* foot 高度*/
   }
-  .allbox{
+  .allbox{/* 所有页面中间内容部分*/
       height: 100%;
       overflow: hidden;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
   }
-  .hotbg{
-      background: rgba(0,0,0,0.3)
-  }
-  .hotbg::after{
-      content:'';
-      z-index: -1;
-      background: url(../../../static/images/hotbg.jpg) no-repeat;
-      background-size: 100% auto;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0 ;
-      top: 0;
-      opacity: 0.7;
-  }
-  .messagebg::after{
-    content:'';
-    z-index: -1;
-    background: url(../../../static/images/messagebg.jpg) no-repeat;
-    background-size: 100% auto;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0 ;
-    top: 0;
-    opacity: 0.8;
-  }
-  .homebg{
-    content:'';
-    z-index: -1;
-    background: url(../../../static/images/homebg1.jpg) no-repeat;
-    background-size: 100% auto;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0 ;
-    top: 0;
-    opacity: 0.8;
-  }
+  
+  
+  

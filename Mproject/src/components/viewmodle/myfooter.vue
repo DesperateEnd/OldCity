@@ -25,3 +25,11 @@ export default {
     }
 }
 </script>
+<style scoped>
+.van-tabbar--fixed{
+      background: rgba(0,0,0,0.7)
+  }
+  .myfooter{
+      height: 0.5rem;
+  }
+</style>
