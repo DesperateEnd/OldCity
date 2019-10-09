@@ -1,7 +1,8 @@
 
+ const getcode = require('../myapi/ramdcode')
  module.exports = login = function(req,res){
     // console.log(req.params,req.body.name,req.query)
-    if(req.body&&(req.body.name==''||req.body.name==undefined||req.body.name==null)){
+    if(req.body&&(req.body.loginCode==''||req.body.loginCode==undefined||req.body.loginCode==null)){
         //没有用户名
         res.send({
             code:'101',
@@ -61,9 +62,7 @@
     });
 
 }
-// SELECT empmo, ename, mgr FROM emp
-// req.body.name  uname 
-db.query('select * from d_user_list where login_code="'+req.body.name+'";',(data)=>{//回调方法
+db.query('select * from d_user_list where login_code="'+req.body.loginCode+'";',(data)=>{//回调方法
     console.log(data)
     if(data.length==0){
         res.send({
@@ -86,7 +85,14 @@ db.query('select * from d_user_list where login_code="'+req.body.name+'";',(data
         data:data[0],
         msg:'登录成功'
     }
-    res.send(JSON.stringify(obj))
+    let ramdcode = getcode(17);//生成随机密匙
+    /* 更新ramdcode */
+    db.query('update d_user_list set ramdcode = "'+ramdcode+'" where  login_code="'+req.body.loginCode+'";',(data)=>{
+        obj.data.ramdcode=ramdcode;
+        res.send(JSON.stringify(obj));
+    })
+    // UPDATE Person SET FirstName = 'Fred' WHERE LastName = 'Wilson' 
+    
 })
 }
 

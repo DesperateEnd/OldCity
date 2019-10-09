@@ -5,6 +5,7 @@ import Hot from '@/components/hot'
 import Message from '@/components/Message'
 import Home from '@/components/home'
 import Login from '@/components/home/login'
+import RegPage from '@/components/home/regpage'
 
 Vue.use(Router)
 
@@ -17,5 +18,6 @@ export default new Router({
 
     /* 用户模块 */
     {path:'/login',name:'login',component:Login},//登陆
+    {path:'/regpage',name:'regpage',component:RegPage},//注册
   ]
 })

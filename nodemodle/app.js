@@ -70,5 +70,7 @@ db.query('select * from d_user_list;',(data)=>{//回调方法
 
 /*登录 */
 let login = require('./login/login');//引入login js 
-app.post('/sql',login)
-
+app.post('/login',login)
+/*注册 */ 
+let regpage = require('./login/regpage');//引入login js 
+app.post('/regpage',regpage)
