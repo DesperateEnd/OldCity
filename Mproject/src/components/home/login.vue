@@ -13,7 +13,7 @@
                 </li>
             </ul>
             <van-button type="danger" @click="getlogin()" style="width:3rem;height:0.5rem;line-height:0.5rem;border-radius:0.1rem;font-size:0.2rem;margin-bottom:0.1rem">登录</van-button>
-            <van-button type="danger" plain style="width:3rem;height:0.5rem;line-height:0.5rem;border-radius:0.1rem;font-size:0.2rem">注册</van-button>
+            <van-button type="danger" @click="$router.push('/regpage')" plain style="width:3rem;height:0.5rem;line-height:0.5rem;border-radius:0.1rem;font-size:0.2rem">注册</van-button>
         </div>
     </div>
 </template>
@@ -30,7 +30,7 @@ export default {
     },
     methods:{
         getlogin(){
-            this.MyAjax('/api/sql',{
+            this.MyAjax('/api/login',{
                 loginCode:this.loginCode,
                 password:this.password
             },(res)=>{
@@ -38,9 +38,13 @@ export default {
                     duration:2000,
                     message: '登录成功！'
                 });
+                sessionStorage.ramdcode = res.data.ramdcode;
                 console.log('回调函数',res)
             })
         }
+    },
+    activated(){
+      
     }
 }
 </script>

@@ -25,8 +25,6 @@ export default {
 .messagebg::after{
     content:'';
     z-index: -1;
-    background: url(../assets/images/messagebg.jpg) no-repeat;
-    background-size: 100% auto;
     position: absolute;
     width: 100%;
     height: 100%;

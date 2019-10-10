@@ -54,8 +54,8 @@ mounted(){
 </script>
 <style scoped>
  .allhead{
-      color:#fff;
-      background: linear-gradient(45deg,black,red);
+      color:#353535;
+      background: #fff;
       height: 0.45rem;
       line-height: 0.45rem;
       font-size: 0.18rem;
@@ -63,6 +63,7 @@ mounted(){
       width: 100%;
       top: 0;
       left: 0;
+      box-shadow: 0 1px 3px 2px #eee;
   }
   .allhead>span:first-child{
       position: absolute;

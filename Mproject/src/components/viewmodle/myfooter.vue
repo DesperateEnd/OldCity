@@ -1,13 +1,14 @@
 <template>
     <van-tabbar v-model="active"
-        active-color="#e70707"
-        inactive-color="#fff"
+        active-color="#f44"
+        inactive-color="#353535"
         class="myfooter"
+        :z-index="5"
     >
-        <van-tabbar-item icon="shop-collect" @click="$router.push('/')">index</van-tabbar-item>
-        <van-tabbar-item icon="like" dot @click="$router.push('/hot')">hot</van-tabbar-item>
-        <van-tabbar-item icon="gem" info="5" @click="$router.push('/message')">msg</van-tabbar-item>
-        <van-tabbar-item icon="manager" info="20" @click="$router.push('/home')">home</van-tabbar-item>
+        <van-tabbar-item icon="home-o" @click="$router.push('/')">首页</van-tabbar-item>
+        <van-tabbar-item icon="flower-o" dot @click="$router.push('/hot')">广场</van-tabbar-item>
+        <van-tabbar-item icon="smile-comment-o" info="5" @click="$router.push('/message')">公告</van-tabbar-item>
+        <van-tabbar-item icon="manager-o" info="20" @click="$router.push('/home')">我的</van-tabbar-item>
     </van-tabbar>
 </template>
 
@@ -26,10 +27,10 @@ export default {
 }
 </script>
 <style scoped>
-.van-tabbar--fixed{
-      background: rgba(0,0,0,0.7)
-  }
   .myfooter{
       height: 0.5rem;
+      position: absolute;   
+      box-shadow: 0 -1px 3px 1px #eee;
   }
+  
 </style>

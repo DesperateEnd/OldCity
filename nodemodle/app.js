@@ -70,7 +70,14 @@ db.query('select * from d_user_list;',(data)=>{//回调方法
 
 /*登录 */
 let login = require('./login/login');//引入login js 
-app.post('/login',login)
+app.post('/login',login);
 /*注册 */ 
 let regpage = require('./login/regpage');//引入login js 
-app.post('/regpage',regpage)
+app.post('/regpage',regpage);
+/*获取用户信息 */
+let userInfo = require('./users/userInfo');//引入 userInfo.js
+app.post('/userInfo',userInfo);
+
+/*redis demo  */
+let myRedis = require('./redis/demo.js');//引入redis demo
+myRedis();//执行redis 方法

@@ -1,5 +1,6 @@
 <template>
   <div class="index">
+    <div class="allbox">
     <!-- 轮播图 -->
     <van-swipe :autoplay="3000" style="width:100%;height:2rem">
       <van-swipe-item v-for="(image, index) in images" :key="index" >
@@ -9,43 +10,43 @@
     <!-- 通知栏 -->
     <van-notice-bar
         color="red"
-        background="rgba(0,0,0,0.3)"
-        left-icon="like"
-        style="border-bottom:1px solid #fff"
+        background="#fff"
+        left-icon="volume-o"
+        style="border-bottom:1px solid #ddd;height:0.3rem"
       >
-      Welcome to Cityisland!  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  I just like you very much and have been waiting for you!
+      欢迎来到OldCity!  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  星河滚烫，你是人间理想。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  只要你来，都不晚。
     </van-notice-bar>
     <!-- 快捷前往列表 -->
      <div class="index-navigation">
-       <div class="index-navigation-title">
+       <!-- <div class="index-navigation-title">
          <van-icon name="gem"/>
           <span>were are you want to go？</span>
-       </div>
+       </div> -->
        <div class="index-navigation-box">
             <ul>
               <li>
-                  <van-icon  name="photo" info="5"/>
-                  <p>Image</p>
+                  <van-icon  name="photo" info="5" color="#03a9f4"/>
+                  <p>美图</p>
               </li>
               <li>
-                  <van-icon name="audio" info="2"/>
-                  <p>Music</p>
+                  <van-icon name="audio" info="2" color="#ff9800"/>
+                  <p>音乐</p>
               </li>
               <li>
-                <van-icon name="like" info="0"/>
-                <p>Ativle</p>
+                <van-icon name="description" info="0" color="#000"/>
+                <p>阅读</p>
               </li>
               <li>
-                <van-icon name="invition" info="7"/>
-                <p>Message</p>
+                <van-icon name="invition" info="7" color="#9c27b0"/>
+                <p>收藏</p>
               </li>
               <li>
-                <van-icon name="smile-comment"/>
-                <p>ContactMe</p>
+                <van-icon name="smile-comment" color="#4caf50"/>
+                <p>消息</p>
               </li>
               <li>
-                <van-icon name="more"/>
-                <p>More</p>
+                <van-icon name="more" color="#00bcd4"/>
+                <p>更多</p>
               </li>
             </ul>
        </div>
@@ -54,13 +55,13 @@
      <div class="newdyamic">
           <div class="newdyamic-tit">
             <van-icon name="fire"/>
-            <span>NEW HOT</span>
+            <span>最新动态</span>
           </div>
           <div class="newdyamic-list">
               <ul>
                 <li>
                     <div>
-                      <van-icon name="photo"/>
+                      <van-icon name="photo" color="#03a9f4"/>
                     </div>
                     <div>
                       <b>New Image</b>
@@ -69,7 +70,7 @@
                 </li>
                 <li>
                     <div>
-                      <van-icon name="star"/>
+                      <van-icon name="star" color="#ffeb3b"/>
                     </div>
                     <div>
                       <b>New Image</b>
@@ -78,7 +79,7 @@
                 </li>
                 <li>
                     <div>
-                      <van-icon name="gem"/>
+                      <van-icon name="gem" color="#e91e63"/>
                     </div>
                     <div>
                       <b>New Image</b>
@@ -87,7 +88,7 @@
                 </li>
                 <li>
                     <div>
-                      <van-icon name="point-gift"/>
+                      <van-icon name="point-gift" color="#f44336"/>
                     </div>
                     <div>
                       <b>New Image</b>
@@ -96,7 +97,7 @@
                 </li>
                 <li>
                     <div>
-                      <van-icon name="bookmark"/>
+                      <van-icon name="bookmark" color="#8bc34a"/>
                     </div>
                     <div>
                       <b>New Image</b>
@@ -105,6 +106,7 @@
                 </li>
               </ul>
           </div>
+     </div>
      </div>
   </div>
 </template>
@@ -132,16 +134,15 @@ export default {
 .index{
       width: 100%;
       height: 100%;
-      overflow-y: auto;
       padding-bottom: 0.5rem;
+      background: #efefef;
   }
   .index::after{
       content:"";
       display: block;
       width: 100%;
       height: 100%;
-      background:url(../assets/images/indexbg2.jpg) no-repeat;
-      background-size: 100% 100%;
+     
       position: absolute;
       left: 0;
       top: 0;
@@ -149,10 +150,15 @@ export default {
       z-index: -1;
   }
   .index-navigation{
-      color: #fff;
-      background: rgba(0,0,0,0.3)
+    width: 95%;
+    margin:0.1rem auto;
+    border-radius: 0.15rem;
+    box-shadow: 0 0 5px 3px #ddd;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    padding: 0.1rem 0 0;
   }
-  .index-navigation-title{
+  /* .index-navigation-title{
       font-size: 0.15rem;
       text-align: left;
       border-bottom: 1px solid #eee;
@@ -163,7 +169,7 @@ export default {
   .index-navigation-title i,.index-navigation-title span{
       display: inline-block;
       vertical-align:center;
-  }
+  } */
   .index-navigation-box{
       font-size: 0.13rem;
   }
@@ -178,10 +184,9 @@ export default {
   }
    .newdyamic{
       margin-top:0.1rem;
-      color: #fff;
       text-align:left;
       padding:0.05rem;
-      background: rgba(0,0,0,0.3);
+      background: #fff;
   }
   .newdyamic-tit{
       font-size: 0.15rem;
@@ -193,12 +198,13 @@ export default {
       font-size: 0.17rem
   }
   .newdyamic-list li{
-      width: 85%;
+      width: 95%;
       margin: auto;
-      background: rgba(0,0,0,0.5);
-      margin-top: 0.07rem;
-      border-radius: 5px;
-      padding: 6px
+      background: #FFF;
+      margin-top: 0.1rem;
+      border-radius: 0.1rem;
+      padding: 0.1rem;
+      box-shadow: 0 0 3px 2px #ddd;
   }
   .newdyamic-list li>div{
       display: inline-block;
@@ -223,5 +229,8 @@ export default {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+  }
+  .newdyamic-list li div:first-child{
+    padding-top: 0.1rem;
   }
 </style>

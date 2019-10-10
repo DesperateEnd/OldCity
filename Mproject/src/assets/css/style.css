@@ -66,6 +66,9 @@ input, textarea {
       height: 100%;
       overflow: hidden;
       padding-bottom: 0.5rem;/* foot 高度*/
+      width: 100%;
+      position: absolute;
+     
   }
   .allbox{/* 所有页面中间内容部分*/
       height: 100%;
@@ -73,6 +76,73 @@ input, textarea {
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
   }
-  
+  /*页面切换动画*/
+  /*进入transtion*/
+.slide-left-enter-active
+{
+    transition: all 0.2s;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+.slide-left-leave-active {
+    transition: all 0.1s;
+    position: absolute;
+    background: #fff;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.slide-left-enter-to {
+    left: 0;
+    z-index: 2;
+}
+
+.slide-left-enter {
+     left: -100%;
+     z-index: 2;
+}
+
+.slide-left-leave {
+    left: 0;
+}
+
+.slide-left-leave-to {
+    left: 0;
+}
+
+
+/*退出*/
+.slide-right-leave-active {
+    transition: all 0.1s;
+    position: absolute;
+    background: #fff;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+}
+.slide-right-enter-active
+{
+    transition: all 0.2s;
+    position: absolute;
+    width: 100%;
+    /* z-index: 1001; */
+}
+.slide-right-enter-to {
+    left: 0;
+}
+.slide-right-enter {
+     left: 100%;
+}
+.slide-right-leave {
+    left: 0;
+}
+.slide-right-leave-to {
+    left: 0;
+}
+.myfooter .van-tabbar-item__icon{
+    font-size: 0.25rem!important
+} 
   
   

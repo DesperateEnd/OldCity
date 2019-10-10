@@ -1,6 +1,6 @@
 <template>
     <div class="allbody regpage">
-        <my-head  :text="'登陆'" ></my-head>
+        <my-head  :text="'注册'" ></my-head>
         <div class="allbox">
             <img src="@/assets/images/log.jpg" alt="" class="logimg">
             <ul>
@@ -20,7 +20,7 @@
                 </li>
             </ul>
             <van-button type="danger" @click="getreg()" style="width:3rem;height:0.5rem;line-height:0.5rem;border-radius:0.1rem;font-size:0.2rem;margin-bottom:0.1rem">注册</van-button>
-            <van-button type="danger" plain style="width:3rem;height:0.5rem;line-height:0.5rem;border-radius:0.1rem;font-size:0.2rem">登录</van-button>
+            <van-button type="danger" @click="$router.push('/login')" plain style="width:3rem;height:0.5rem;line-height:0.5rem;border-radius:0.1rem;font-size:0.2rem">登录</van-button>
         </div>
     </div>
 </template>
