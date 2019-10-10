@@ -16,7 +16,9 @@ import { Tabbar,
   Lazyload,
   NoticeBar,
   Button,
-  Toast
+  Toast,
+  Tab,
+  Tabs
  } from 'vant';
 Vue.use(Tabbar)
 .use(TabbarItem)
@@ -26,7 +28,9 @@ Vue.use(Tabbar)
 .use(SwipeItem)
 .use(NoticeBar)
 .use(Button)
-.use(Toast);
+.use(Toast)
+.use(Tab)
+.use(Tabs);
 /*配置axiso 请求的时候 */
 axios.interceptors.request.use((config) => {//发送请求
   if (config.method === 'post') {
