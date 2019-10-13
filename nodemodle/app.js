@@ -78,6 +78,6 @@ app.post('/regpage',regpage);
 let userInfo = require('./users/userInfo');//引入 userInfo.js
 app.post('/userInfo',userInfo);
 
-/*redis demo  */
+/*redis demo  暂时不使用 先了解*/
 let myRedis = require('./redis/demo.js');//引入redis demo
 myRedis();//执行redis 方法
