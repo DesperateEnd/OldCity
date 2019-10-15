@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/index'
-import Hot from '@/components/hot'
+import Square from '@/components/square'
 import Message from '@/components/Message'
 import Home from '@/components/home'
 import Login from '@/components/home/login'
@@ -17,7 +17,7 @@ export default new Router({
     {path: '/',name: 'index',component: Index,meta:{
       pageIndex:0
     }},//首页
-    {path:'/hot',name:'Hot',component:Hot,meta:{
+    {path:'/square',name:'Square',component:Square,meta:{
       pageIndex:1
     }},//热门
     {path:'/message',name:'Message',component:Message,meta:{

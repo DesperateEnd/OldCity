@@ -6,7 +6,7 @@
         :z-index="5"
     >
         <van-tabbar-item icon="home-o" @click="$router.push('/')">首页</van-tabbar-item>
-        <van-tabbar-item icon="flower-o" dot @click="$router.push('/hot')">广场</van-tabbar-item>
+        <van-tabbar-item icon="flower-o" dot @click="$router.push('/square')">广场</van-tabbar-item>
         <van-tabbar-item icon="smile-comment-o" info="5" @click="$router.push('/message')">公告</van-tabbar-item>
         <van-tabbar-item icon="manager-o" info="20" @click="$router.push('/home')">我的</van-tabbar-item>
     </van-tabbar>
@@ -25,7 +25,7 @@ export default {
         '$route' (to, from) {//监听路由变化
                 if(this.$route.name=='index'){
                     this.active = 0;
-                }else if(this.$route.name=='Hot'){
+                }else if(this.$route.name=='Square'){
                     this.active = 1;
                 }else if(this.$route.name=='Message'){
                     this.active = 2;
@@ -40,7 +40,7 @@ export default {
     created(){//初始化
             if(this.$route.name=='index'){
                 this.active = 0;
-            }else if(this.$route.name=='Hot'){
+            }else if(this.$route.name=='Square'){
                 this.active = 1;
             }else if(this.$route.name=='Message'){
                 this.active = 2;

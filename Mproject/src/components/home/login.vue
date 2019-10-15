@@ -39,6 +39,7 @@ export default {
                     message: '登录成功！'
                 });
                 sessionStorage.ramdcode = res.data.ramdcode;
+                this.$router.push('/home')
                 console.log('回调函数',res)
             })
         }

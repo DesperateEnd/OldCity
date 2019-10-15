@@ -40,7 +40,7 @@ export default {
     　　    this.$router.isBack = false
           }
     　　　/* 底部的显示隐藏*/
-          if(to.name!='index'&&to.name!='Hot'&&to.name!='Message'&&to.name!='Home'){//不是四个主页面
+          if(to.name!='index'&&to.name!='Square'&&to.name!='Message'&&to.name!='Home'){//不是四个主页面
               this.footShow =false;//底部隐藏
           }else{
             this.footShow =true;//底部显示
@@ -49,7 +49,7 @@ export default {
   },
   created(){
     /* 第一次进入页面 */ 
-    if(this.$route.name!='index'&&this.$route.name!='Hot'&&this.$route.name!='Message'&&this.$route.name!='Home'){//不是四个主页面
+    if(this.$route.name!='index'&&this.$route.name!='Square'&&this.$route.name!='Message'&&this.$route.name!='Home'){//不是四个主页面
               this.footShow =false;//底部隐藏
           }else{
             this.footShow =true;//底部显示

@@ -18,7 +18,8 @@ import { Tabbar,
   Button,
   Toast,
   Tab,
-  Tabs
+  Tabs,
+  ImagePreview 
  } from 'vant';
 Vue.use(Tabbar)
 .use(TabbarItem)
@@ -30,7 +31,8 @@ Vue.use(Tabbar)
 .use(Button)
 .use(Toast)
 .use(Tab)
-.use(Tabs);
+.use(Tabs)
+.use(ImagePreview);
 /*配置axiso 请求的时候 */
 axios.interceptors.request.use((config) => {//发送请求
   if (config.method === 'post') {
@@ -49,8 +51,14 @@ Vue.prototype.MyAjax = function(url,data,callfun){
       url: url,
       data: data
   }).then(function(res){//请求成功
-    if(res&&res.status==200&&res.data&&res.data.code=='100'){
+    if(res&&res.status==200&&res.data&&(res.data.code=='100'||res.data.code=='103')){
       callfun(res.data)
+    }else if(res&&res.status==200&&res.data&&res.data.code=='102'){
+      Toast.fail({
+        duration:2000,
+        message: "请先登陆"
+      });
+      router.push('/login')
     }else{
       Toast.fail({
         duration:2000,
@@ -75,7 +83,25 @@ Vue.component('my-head', MyHead); //初始化组件
 Vue.use(Lazyload);
 //--------------------------
 Vue.config.productionTip = false
-
+/*音频播放 */
+Vue.prototype.audioPlay = function(id,fun) {
+  var au = document.getElementById(id);
+  console.log(au,au.readyState,HTMLMediaElement.HAVE_NOTHING)
+  if (au!==undefined && au.readyState!==HTMLMediaElement.HAVE_NOTHING && au.paused){
+            if(au.ended){//播放结束 重置时间
+              au.currentTime = 0;
+            }
+            au.play();
+            au.addEventListener('ended', function () {  
+              //播放结束回调
+              fun()
+          }, false);
+  }else if(au!==undefined && au.readyState!==HTMLMediaElement.HAVE_NOTHING && !au.paused){
+            au.pause();
+  }else{
+      console.error('播放出错')
+  }
+};
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

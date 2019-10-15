@@ -146,6 +146,6 @@ input, textarea {
 } 
   
 /* 广场 */
-.hot .van-tabs,.hot .van-tabs__content,.hot .van-tab__pane,.hot .van-tab__pane-wrapper{
+.square .van-tabs,.square .van-tabs__content,.square .van-tab__pane,.square .van-tab__pane-wrapper{
     height: 100%;
 }

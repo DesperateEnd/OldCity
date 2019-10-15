@@ -4,10 +4,10 @@
             <!-- 个人信息模块 -->
             <div class="home-user">
                 <div>
-                    <img src="@/assets/images/log.jpg" alt="">
+                    <img :src="'../static/images/users/'+img" alt="">
                 </div>
                 <div>
-                    <p>{{this.uname}}</p>
+                    <p>{{uname}}</p>
                     <p style="font-size:0.16rem;color:#999">{{loginCode}}</p>
                 </div>
                 <van-icon name="arrow" size="0.3rem" color="#999"/>
@@ -72,14 +72,16 @@ export default {
         return{
             uname:'name',
             loginCode:'code',
+            img:'0.jpg'
         }
     },
     activated(){
         this.MyAjax('/api/userInfo',{
             ramdcode:sessionStorage.ramdcode
             },(res)=>{
-            this.uname = res.data.uname;
-            this.loginCode = res.data.login_code;
+            this.uname = res.data.uname;//用户名
+            this.loginCode = res.data.login_code;//登陆账号
+            this.img = res.data.img;//用户头像
             console.log(res)
         })
     }
