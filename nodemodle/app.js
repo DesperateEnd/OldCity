@@ -77,7 +77,9 @@ app.post('/regpage',regpage);
 /*获取用户信息 */
 let userInfo = require('./users/userInfo');//引入 userInfo.js
 app.post('/userInfo',userInfo);
-
+/*获取广场信息 */
+let square = require('./square/square');//引入 square.js
+app.post('/square',square);
 /*redis demo  暂时不使用 先了解*/
 let myRedis = require('./redis/demo.js');//引入redis demo
 myRedis();//执行redis 方法

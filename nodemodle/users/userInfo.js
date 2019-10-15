@@ -1,7 +1,6 @@
 
  
  /* 获取用户信息接口 */
- const getcode = require('../myapi/ramdcode')
  module.exports = userInfo = function(req,res){
     // console.log(req.params,req.body.name,req.query)
     if(req.body&&(req.body.ramdcode==''||req.body.ramdcode==undefined||req.body.ramdcode==null)){
