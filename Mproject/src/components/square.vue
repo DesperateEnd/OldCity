@@ -195,15 +195,19 @@ export default {
         }
     },
     methods:{
-        onClick(name, title) {
-      
-      this.getinit(name)
-    },
+        onClick(name, title) {//nav 导航切换
+            this.dataList = [];
+            this.getinit(name)
+        },
         getinit(state){//获取初始化列表
+        this.$toast.loading({
+            loadingType: 'spinner'
+        });
             this.MyAjax('/api/square',{
                     ramdcode:sessionStorage.ramdcode,
                     state:state
                     },(res)=>{
+                        this.$toast.clear()
                         if(res.code=='103'){
                             this.dataList = [];
                             this.$toast.fail({
@@ -213,14 +217,13 @@ export default {
                             return;
                         }
                     for(let i=0;i<res.data.length;i++){
-                        console.log(111)
                         if(res.data[i].imglist!=""){
-                            console.log('coming')
                             res.data[i].imglist = JSON.parse(res.data[i].imglist)
                         }
                         if(res.data[i].audioObj!=""){
                             res.data[i].audioObj = JSON.parse(res.data[i].audioObj)
                         }
+                        res.data[i].moreshow=false;//控住右上角列表的显示隐藏
                     }
                     this.dataList = res.data
                     

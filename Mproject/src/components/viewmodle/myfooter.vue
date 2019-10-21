@@ -7,7 +7,7 @@
     >
         <van-tabbar-item icon="home-o" @click="$router.push('/')">首页</van-tabbar-item>
         <van-tabbar-item icon="flower-o" dot @click="$router.push('/square')">广场</van-tabbar-item>
-        <van-tabbar-item icon="smile-comment-o" info="5" @click="$router.push('/message')">公告</van-tabbar-item>
+        <van-tabbar-item icon="smile-comment-o" info="5" @click="$router.push('/message')">消息</van-tabbar-item>
         <van-tabbar-item icon="manager-o" info="20" @click="$router.push('/home')">我的</van-tabbar-item>
     </van-tabbar>
 </template>

@@ -55,7 +55,7 @@
      <div class="newdyamic">
           <div class="newdyamic-tit">
             <van-icon name="fire"/>
-            <span>最新动态</span>
+            <span>今日热点</span>
           </div>
           <div class="newdyamic-list">
               <ul>

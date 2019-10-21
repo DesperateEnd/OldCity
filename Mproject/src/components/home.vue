@@ -89,17 +89,9 @@ export default {
 </script>
 
 <style scoped>
-    .homebg{
-    content:'';
-    z-index: -1;
-    background: #efefef;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0 ;
-    top: 0;
-    opacity: 0.8;
-  }
+   .homebg{
+       background: #efefef;
+   }
   .home-user{
       padding: 0.15rem;
       text-align: left;

@@ -19,7 +19,8 @@ import { Tabbar,
   Toast,
   Tab,
   Tabs,
-  ImagePreview 
+  ImagePreview ,
+ 
  } from 'vant';
 Vue.use(Tabbar)
 .use(TabbarItem)
@@ -32,7 +33,8 @@ Vue.use(Tabbar)
 .use(Toast)
 .use(Tab)
 .use(Tabs)
-.use(ImagePreview);
+.use(ImagePreview)
+;
 /*配置axiso 请求的时候 */
 axios.interceptors.request.use((config) => {//发送请求
   if (config.method === 'post') {
