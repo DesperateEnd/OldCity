@@ -6,6 +6,7 @@ import Message from '@/components/Message'
 import Home from '@/components/home'
 import Login from '@/components/home/login'
 import RegPage from '@/components/home/regpage'
+import userInfo from '@/components/home/userinfo'
 
 Vue.use(Router)
 Router.prototype.goBack = function () { //后退方法
@@ -30,5 +31,13 @@ export default new Router({
     /* 用户模块 */
     {path:'/login',name:'login',component:Login},//登陆
     {path:'/regpage',name:'regpage',component:RegPage},//注册
+    {path:'/home/userinfo',name:'userinfo',component:userInfo}
   ]
 })
+Router.prototype.goBack = function () { 
+  　　this.isBack = true
+  　　window.history.back();
+} 
+Router.prototype.mypush = function (bool,url,query) { 
+  　　
+} 

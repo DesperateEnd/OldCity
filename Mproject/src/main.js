@@ -104,6 +104,8 @@ Vue.prototype.audioPlay = function(id,fun) {
       console.error('播放出错')
   }
 };
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

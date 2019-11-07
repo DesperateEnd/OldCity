@@ -2,7 +2,7 @@
     <div class="home">
        <div class="allbox homebg" style="padding-top:0">
             <!-- 个人信息模块 -->
-            <div class="home-user">
+            <div class="home-user" @click="">
                 <div>
                     <img :src="'../static/images/users/'+img" alt="">
                 </div>
@@ -89,6 +89,11 @@ export default {
 </script>
 
 <style scoped>
+    .home{
+        height: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
    .homebg{
        background: #efefef;
    }
