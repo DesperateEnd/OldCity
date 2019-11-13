@@ -80,6 +80,9 @@ app.post('/userInfo',userInfo);
 /*获取广场信息 */
 let square = require('./square/square');//引入 square.js
 app.post('/square',square);
+/*修改用户头像 */
+let updateImg = require('./users/updateImg');//引入 updateImg.js
+app.post('/updateImg',updateImg);
 /*redis demo  暂时不使用 先了解*/
 let myRedis = require('./redis/demo.js');//引入redis demo
 myRedis();//执行redis 方法
