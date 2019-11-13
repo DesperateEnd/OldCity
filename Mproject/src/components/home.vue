@@ -2,7 +2,7 @@
     <div class="home">
        <div class="allbox homebg" style="padding-top:0">
             <!-- 个人信息模块 -->
-            <div class="home-user" @click="">
+            <div class="home-user" @click="myPush(true,'/home/userinfo',{})">
                 <div>
                     <img :src="'../static/images/users/'+img" alt="">
                 </div>
@@ -23,14 +23,15 @@
                         <van-icon name="like-o" size="0.3rem" color="#e91e63"/>
                         <p>收藏</p>
                     </li>
-                     <li>
-                        <van-icon name="comment-o" size="0.3rem" color="#4caf50"/>
-                        <p>消息</p>
-                    </li>
-                     <li>
+                    <li>
                         <van-icon name="friends-o" size="0.3rem" color="#00bcd4"/>
                         <p>好友</p>
                     </li>
+                     <li @click="myPush(false,'/game/cnavasdemo',{})">
+                        <van-icon name="star" size="0.3rem" color="#ffc107"/>
+                        <p>小游戏</p>
+                    </li>
+                     
                 </ul>
             </div>
             <!-- 其他入口 -->
@@ -82,6 +83,7 @@ export default {
             this.uname = res.data.uname;//用户名
             this.loginCode = res.data.login_code;//登陆账号
             this.img = res.data.img;//用户头像
+            sessionStorage.user = JSON.stringify(res.data)
             console.log(res)
         })
     }

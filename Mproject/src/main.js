@@ -19,7 +19,8 @@ import { Tabbar,
   Toast,
   Tab,
   Tabs,
-  ImagePreview ,
+  ImagePreview,
+  Dialog,
  
  } from 'vant';
 Vue.use(Tabbar)
@@ -34,6 +35,7 @@ Vue.use(Tabbar)
 .use(Tab)
 .use(Tabs)
 .use(ImagePreview)
+.use(Dialog)
 ;
 /*配置axiso 请求的时候 */
 axios.interceptors.request.use((config) => {//发送请求
@@ -56,9 +58,13 @@ Vue.prototype.MyAjax = function(url,data,callfun){
     if(res&&res.status==200&&res.data&&(res.data.code=='100'||res.data.code=='103')){
       callfun(res.data)
     }else if(res&&res.status==200&&res.data&&res.data.code=='102'){
-      Toast.fail({
-        duration:2000,
-        message: "请先登陆"
+      Dialog.confirm({
+        title:'未登录',
+        message: '您未登录是否前往登录？'
+      }).then(() => {
+        this.$router.push('/login')
+      }).catch(() => {
+        this.$router.goBack();
       });
       router.push('/login')
     }else{
@@ -104,8 +110,26 @@ Vue.prototype.audioPlay = function(id,fun) {
       console.error('播放出错')
   }
 };
-
-
+/* 封装路由跳转*/
+Vue.prototype.myPush = function (bool,url,query) { 
+  　　if(bool){//需要登录状态
+        let islogin = sessionStorage.ramdcode;
+        if(islogin==null||islogin==''||islogin==undefined){
+          this.$dialog.confirm({
+            title:'未登录',
+            message: '您未登录是否前往登录？'
+          }).then(() => {
+            this.$router.push('/login')
+          }).catch(() => {
+            
+          });
+        }else{
+          this.$router.push({path:url,query:query});
+        }
+      }else{//不需要登录状态
+        this.$router.push({path:url,query:query});
+      }
+} 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

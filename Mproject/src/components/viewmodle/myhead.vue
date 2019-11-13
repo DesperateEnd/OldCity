@@ -1,6 +1,6 @@
 <template>
   <div class="allhead">
-      <span @click.stop="goback"><van-icon :name="left" /></span>
+      <span @click.stop="$router.goBack()"><van-icon :name="left" size="0.25rem" color="#8c8c8c" style="margin-top:0.1rem"/></span>
       <span>{{text}}</span>
       <span @click.stop="rightfun">{{righttype?'':right}}<van-icon :name="right" v-show="righttype"/></span>
   </div>
@@ -26,10 +26,7 @@ props:{
         type:Boolean,
         default:true,
     },
-    goback:{
-        type:Function,
-        default:this.goback
-    },
+   
     rightfun:{
         type:Function,
         default:()=>{},
@@ -40,9 +37,7 @@ return{
 }
 },
 metheds:{
-    goback(){
-        this.$router.go(-1)
-    }
+    
 },
 created(){
 },
