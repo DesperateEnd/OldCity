@@ -62,11 +62,12 @@ Vue.prototype.MyAjax = function(url,data,callfun){
         title:'未登录',
         message: '您未登录是否前往登录？'
       }).then(() => {
-        this.$router.push('/login')
+        router.push('/login')
       }).catch(() => {
-        this.$router.goBack();
+        console.log(this)
+        router.goBack();
       });
-      router.push('/login')
+      // router.push('/login')
     }else{
       Toast.fail({
         duration:2000,

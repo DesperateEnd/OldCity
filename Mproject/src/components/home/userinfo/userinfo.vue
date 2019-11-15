@@ -13,15 +13,15 @@
                      <span></span>
                      <span>{{user==null?'- -':user.login_code}}</span>
                  </li>
-                 <li>
+                 <li @click="myPush(true,'/home/userinfo/usernickname',{})">
                      <span>昵称:</span>
                      <span><van-icon name="arrow" color="#999" size="0.2rem"/></span>
                      <span>{{user==null?'- -':user.uname}}</span>
                  </li>
-                 <li>
+                 <li @click="myPush(true,'/home/useringo/usersignature',{})">
                      <span>个签:</span>
                      <span><van-icon name="arrow" color="#999" size="0.2rem"/></span>
-                     <span>asdasdasd</span>
+                     <span>{{user==null?'':user.signature}}</span>
                  </li>
              </ul>
          </div>

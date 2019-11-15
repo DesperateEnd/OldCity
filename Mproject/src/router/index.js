@@ -8,6 +8,8 @@ import Login from '@/components/home/login' // 登录页面
 import RegPage from '@/components/home/regpage' // 注册页面
 import userInfo from '@/components/home/userinfo/userinfo' // 个人资料页面
 import userImg from '@/components/home/userinfo/userimg' // 修改用户头像页面
+import userNickName from '@/components/home/userinfo/usernickname' // 修改用户昵称
+import userSignature from '@/components/home/userinfo/usersignature' // 修改个性签名
 
 import CanvasDemo from '@/components/canvasgame/canvasdemo'// canvas 小游戏
 
@@ -19,6 +21,7 @@ Router.prototype.goBack = function () { //后退方法
 
 export default new Router({
   routes: [
+    /*四个主页面 */
     {path: '/',name: 'index',component: Index,meta:{
       pageIndex:0
     }},//首页
@@ -37,6 +40,8 @@ export default new Router({
     {path:'/regpage',name:'regpage',component:RegPage},//注册
     {path:'/home/userinfo',name:'userinfo',component:userInfo},// 个人资料页面
     {path:'/home/userinfo/userimg',name:'userimg',component:userImg},// 修改用户头像页面
+    {path:'/home/userinfo/usernickname',name:'usernickname',component:userNickName},//修改用户昵称页面
+    {path:'/home/useringo/usersignature',name:'usersignature',component:userSignature},// 修改个性签名页面
 
     /*小游戏 */
     {path:'/game/cnavasdemo',name:'canvasedemo',component:CanvasDemo}//小游戏
