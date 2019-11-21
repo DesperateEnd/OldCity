@@ -49,7 +49,7 @@ export default {
                     message: '修改成功！'
                 });
             
-        })
+        });
          },
          choseImg(num){// 选中img
             this.index = num;
