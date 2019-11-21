@@ -83,6 +83,11 @@ app.post('/square',square);
 /*修改用户头像 */
 let updateImg = require('./users/updateImg');//引入 updateImg.js
 app.post('/updateImg',updateImg);
+/*修改用户昵称 */
+let updateNickname = require('./users/updateNickname');//引入 updateNickname.js
+app.post('/updateNickname',updateNickname);
+let updateSignature = require('./users/updateSignature');//引入 updateSignature.js
+app.post('/updateSignature',updateSignature);
 /*redis demo  暂时不使用 先了解*/
 let myRedis = require('./redis/demo.js');//引入redis demo
 myRedis();//执行redis 方法
