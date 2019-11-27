@@ -1,6 +1,7 @@
 <template>
     <div id="canvasdemo"  @click="canClick($event)">
         <!-- 背景音乐按钮 -->
+        <button  @click="$router.goBack()"><van-icon name="arrow-left" size="0.25rem" color="#fff"/></button>
         <button @click.stop="backMusicPlay()">背景音乐({{backMuserBool?'开':'关'}})</button>
         <!-- 五个图层 -->
         <canvas id="myCanvas0"></canvas>
@@ -660,11 +661,24 @@ export default {
     top:0;
     left: 0;
 }
-#canvasdemo button{
+#canvasdemo button:nth-child(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+}
+#canvasdemo button:first-child{
     position: absolute;
     top: 0;
     left: 0;
     z-index: 100;
+    background: rgba(0,0,0,0.3);
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    width: 0.3rem;
 }
 #canvasdemo{
     background: #00bcd4;
